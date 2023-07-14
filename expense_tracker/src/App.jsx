@@ -5,10 +5,10 @@ import './App.css'
 
 export default function App() {
   return (
-    <div>
-      <AddTransaction />
+    <div className='main'>
       <Balance />
       <History />
+      <AddTransaction />
     </div>
   )
 }
