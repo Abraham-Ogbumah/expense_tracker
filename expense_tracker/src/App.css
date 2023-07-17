@@ -24,8 +24,8 @@
   margin-bottom: 10px;
 }
 
-.your-balance {
-  margin-bottom: 10px;
+.sub-header {
+  margin-bottom: 5px;
 }
 
 .balance {
@@ -41,7 +41,7 @@
   border: 1px solid black;
   border-radius: 10px;
   box-shadow: 2px 2px 5px #808080;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .bal-header {
@@ -57,5 +57,18 @@
   border-left: 1px solid black;
   height: 60px;
   /* padding: 1px; */
+}
+
+.history-element {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+
+  border: 1px solid #000;
+  border-radius: 10px;
+  border-right: 5px solid #ff0000;
 }
 

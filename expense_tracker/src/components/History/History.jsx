@@ -3,11 +3,11 @@
 const History = () => {
   return (
     <>
-      <h3>History</h3>
+      <h3 className="sub-header">History</h3>
       <hr></hr>
-      <div>
-        <p>Groceries</p>
-        <p>$50</p>
+      <div className="history-element">
+        <p className="history-title">Groceries</p>
+        <p className="history-amount">$50</p>
       </div>
     </>
   )
