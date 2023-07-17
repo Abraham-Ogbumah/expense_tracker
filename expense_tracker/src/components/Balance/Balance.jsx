@@ -3,21 +3,22 @@
 const Balance = () => {
   return (
     <>
-        <header>
+        <header className="header">
             <h1 >Expense Tracker</h1>
         </header>
         <div className="your-balance">
-            <h3>Your Balance</h3>
-            <h1>$260.00</h1>
+            <h3 className="your-balance_header">Your Balance</h3>
+            <h1 className="your-balance_amount">$260.00</h1>
         </div>
         <div className="balance">
-            <div className="income">
-                <h5>INCOME</h5>
-                <h3>$1500</h3>
+            <div className="income element">
+                <h5 className="income_header bal-header">Income</h5>
+                <h3 className="income_amount">$1500</h3>
             </div>
-            <div className="expense">
-                <h5>INCOME</h5>
-                <h3>$1500</h3>
+            <div className="vertical-seperator"></div>
+            <div className="expense element">
+                <h5 className="expense_header bal-header">Expense</h5>
+                <h3 className="expense_amount">$1500</h3>
             </div>
         </div>
     </>
