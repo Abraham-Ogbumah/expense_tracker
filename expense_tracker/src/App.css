@@ -59,6 +59,10 @@
   /* padding: 1px; */
 }
 
+.history {
+  margin-bottom: 2rem;
+}
+
 .history-element {
   display: flex;
   align-items: center;

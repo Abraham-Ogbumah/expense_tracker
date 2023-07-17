@@ -3,6 +3,8 @@
 const AddTransaction = () => {
   return (
     <>
+      <h3 className="sub-header">Add Transaction</h3>
+      <hr></hr>
       <form>
         <label htmlFor="title">
           <input type="text" placeholder="Income / Expense"/>
