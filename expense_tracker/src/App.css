@@ -61,6 +61,14 @@
   padding: 10px;
 }
 
+.income_amount {
+  color: green;
+}
+
+.expense_amount {
+  color: red;
+}
+
 .vertical-seperator {
   border-left: 1px solid black;
   height: 60px;

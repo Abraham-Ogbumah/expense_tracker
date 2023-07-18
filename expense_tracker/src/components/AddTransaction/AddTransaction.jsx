@@ -1,6 +1,9 @@
+import { useState } from "react";
 
 
 const AddTransaction = () => {
+  const [text, setText] = useState("");
+  const [amount, setAmount ] = useState("");
   return (
     <>
       <h3 className="sub-header">Add Transaction</h3>
@@ -8,13 +11,13 @@ const AddTransaction = () => {
       <div className="form">
       <form>
         <div>
-          <label htmlFor="title" className="label">Text</label>
-          <input id="title" name="name" type="text" placeholder="Enter description" className="input"/>
+          <label htmlFor="text" className="label">Text</label>
+          <input name="text" value={text} type="text" placeholder="Enter description" className="input" onChange={(e) => setText(e.target.value)}/>
         </div>
         <br/>
         <div>
           <label htmlFor="amount" className="label">Amount</label>
-          <input type="text" placeholder="Enter Amount" className="input"/>
+          <input name="amount" value={amount} type="text" placeholder="Enter Amount" className="input"/>
         </div>
         <br />
         <input type="submit" value="Add Transaction" className="submit"/>
