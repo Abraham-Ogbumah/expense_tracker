@@ -17,7 +17,7 @@ const AddTransaction = () => {
         <br/>
         <div>
           <label htmlFor="amount" className="label">Amount</label>
-          <input name="amount" value={amount} type="text" placeholder="Enter Amount" className="input"/>
+          <input name="amount" value={amount} type="text" placeholder="Enter Amount" className="input" onChange={(e) => setAmount(e.target.value)}/>
         </div>
         <br />
         <input type="submit" value="Add Transaction" className="submit"/>
