@@ -1,7 +1,7 @@
-import { Add_Transaction } from "./actions";
+import { ADD_TRANSACTION } from "./actions";
 
 const expenseTrackerReducer = (state = [], action) => {
-    if (action.type === Add_Transaction)
+    if (action.type === ADD_TRANSACTION)
         return {
             ...state,
             transactions: [action.payload, ...state.transactions]

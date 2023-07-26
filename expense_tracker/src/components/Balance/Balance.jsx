@@ -1,6 +1,8 @@
 
+const Balance = ({ transactions = []}) => {
+    const amount = transactions.map((transaction) => Number(transaction.amount))
+    const total = amount.reduce((acc, item) => acc + item, 0);
 
-const Balance = () => {
   return (
     <>
         <header className="header">
@@ -8,7 +10,7 @@ const Balance = () => {
         </header>
         <div className="your-balance">
             <h3 className="your-balance_header">Your Balance</h3>
-            <h1 className="your-balance_amount">$260.00</h1>
+            <h1 className="your-balance_amount">${total}</h1>
         </div>
         <div className="balance">
             <div className="income element">

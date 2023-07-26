@@ -1,6 +1,6 @@
-export const Add_Transaction = "Add_Transaction"
+export const ADD_TRANSACTION = "ADD_TRANSACTION"
 
 export const addTransaction = (transaction) => ({
-    type: Add_Transaction,
+    type: ADD_TRANSACTION,
     payload: transaction
 })

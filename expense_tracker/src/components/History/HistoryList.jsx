@@ -4,7 +4,7 @@ export default function HistoryList({transaction}) {
   return (
     <>
         <p className="history-title">Groceries</p>
-        <p className="history-amount">$50</p>
+        <p className="history-amount">${Math.abs(transaction.amount)}</p>
     </>
   )
 }
