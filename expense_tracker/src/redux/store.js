@@ -1,8 +1,11 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { createStore } from "redux";
 import expenseTrackerReducer from "./reducer";
+import { addTransaction } from "./actions";
 
-const store = configureStore({
-  reducer: {expenseTrackerReducer},
-});
+let store = createStore(expenseTrackerReducer)
 
-export default store;
+const unsubscribe = store.subscribe(() => console.log(store.getState()))
+
+store.dispatch(addTransaction())
+
+unsubscribe()
