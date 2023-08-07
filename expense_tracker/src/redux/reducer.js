@@ -1,6 +1,10 @@
 import { ADD_TRANSACTION } from "./actions";
 
-const expenseTrackerReducer = (state = [], action) => {
+const initialState = {
+    transactions: []
+}
+
+const expenseTrackerReducer = (state = initialState, action) => {
     if (action.type === ADD_TRANSACTION)
         return {
             ...state,
