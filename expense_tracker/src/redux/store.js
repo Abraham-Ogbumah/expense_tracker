@@ -4,8 +4,13 @@ import { addTransaction } from "./actions";
 
 let store = createStore(expenseTrackerReducer)
 
-const unsubscribe = store.subscribe(() => console.log(store.getState()))
+const unsubscribe = store.subscribe(() => console.log(store.getState()));
 
-store.dispatch(addTransaction())
+const transaction = {
+   text: "",
+   amount: 0
+}
+
+store.dispatch(addTransaction(transaction))
 
 unsubscribe()
