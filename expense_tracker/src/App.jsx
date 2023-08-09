@@ -1,4 +1,5 @@
-import React from "react";
+// import React from "react";
+import PropTypes from 'prop-types'
 import { connect } from "react-redux";
 import { addTransaction } from "./redux/actions";
 
@@ -19,6 +20,11 @@ function App({ transactions, addTransaction }) {
     </div>
   )
 }
+
+App.propTypes = { // Define the prop types
+  transactions: PropTypes.array.isRequired,
+  addTransaction: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = (state) => ({
   transactions: state.transactions,

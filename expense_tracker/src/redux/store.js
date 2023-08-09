@@ -14,3 +14,5 @@ const transaction = {
 store.dispatch(addTransaction(transaction))
 
 unsubscribe()
+
+export default store;
