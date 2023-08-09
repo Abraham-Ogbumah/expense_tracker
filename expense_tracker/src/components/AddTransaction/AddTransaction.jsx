@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 const AddTransaction = ({ addTransaction }) => {
 
   const [text, setText] = useState("");
-  const [amount, setAmount ] = useState(0);
+  const [amount, setAmount ] = useState();
 
   function handleSubmit(e) {
     e.preventDefault();

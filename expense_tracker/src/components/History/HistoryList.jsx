@@ -3,8 +3,10 @@ export default function HistoryList({transaction}) {
     let sign = transaction.amount >= 0 ? "+" : "-";
   return (
     <>
-        <p className="history-title">{transaction.text}</p>
-        <p className="history-amount">{sign}${Math.abs(transaction.amount)}</p>
+      <div className='history-element'>
+          <p className="history-title">{transaction.text}</p>
+          <p className="history-amount">{sign}${Math.abs(transaction.amount)}</p>
+      </div>
     </>
   )
 }
