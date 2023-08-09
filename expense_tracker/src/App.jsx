@@ -1,3 +1,4 @@
+import React from "react";
 import { connect } from "react-redux";
 import { addTransaction } from "./redux/actions";
 
@@ -6,16 +7,14 @@ import History from './components/History/History'
 import Balance from './components/Balance/Balance'
 import './App.css'
 
-export function App(props) {
-  const {transactions, addTransaction} = props
-
+function App({ transactions, addTransaction }) {
+  // const {transactions, addTransaction} = props
   return (
     <div className='main'>
       <Balance transactions={transactions} />
       <History transactions={transactions} />
       <AddTransaction
-        addTransaction={(transaction) => addTransaction(transaction)}
-        // id={transactions[0] ? transactions[0].id + 1 : 1}
+        addTransaction={addTransaction}
       />
     </div>
   )
@@ -25,8 +24,8 @@ const mapStateToProps = (state) => ({
   transactions: state.transactions,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  addTransaction: (transaction) => dispatch(addTransaction(transaction)),
-})
+const mapDispatchToProps = {
+  addTransaction,
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
