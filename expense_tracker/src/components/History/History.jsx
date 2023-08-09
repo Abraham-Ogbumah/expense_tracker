@@ -1,13 +1,15 @@
 import HistoryList from "./HistoryList";
 
-const History = () => {
+const History = ({ transactions }) => {
   return (
     <>
     <div className="history">
       <h3 className="sub-header">History</h3>
         <hr></hr>
       <div className="history-element">
-        <HistoryList />
+       {transactions.map(transaction => (
+        <HistoryList key={transaction.text} transaction={transaction} />
+       ))}
       </div>
     </div>
       

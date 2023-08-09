@@ -1,7 +1,9 @@
+import PropTypes from 'prop-types'
 
-const Balance = ({ transactions = []}) => {
-    const amount = transactions.map((transaction) => Number(transaction.amount))
-    const total = amount.reduce((acc, item) => acc + item, 0);
+const Balance = ({ transactions = [] }) => {
+    const income = transactions.filter(t => t.amount > 0).reduce((acc, t) => acc + t.amount, 0);
+    const expense = transactions.filter(t => t.amount < 0).reduce((acc, t) => acc - t.amount, 0)
+    const total = income - expense;
 
   return (
     <>
@@ -15,16 +17,20 @@ const Balance = ({ transactions = []}) => {
         <div className="balance">
             <div className="income element">
                 <h5 className="income_header bal-header">Income</h5>
-                <h3 className="income_amount">$1500</h3>
+                <h3 className="income_amount">${income.toFixed(2)}</h3>
             </div>
             <div className="vertical-seperator"></div>
             <div className="expense element">
                 <h5 className="expense_header bal-header">Expense</h5>
-                <h3 className="expense_amount">$1500</h3>
+                <h3 className="expense_amount">${expense.toFixed(2)}</h3>
             </div>
         </div>
     </>
   )
+}
+
+Balance.propTypes = {
+    transactions: PropTypes.array.isRequired,
 }
 
 export default Balance;

@@ -1,10 +1,18 @@
-
+import PropTypes from 'prop-types';
 export default function HistoryList({transaction}) {
     let sign = transaction.amount >= 0 ? "+" : "-";
   return (
     <>
-        <p className="history-title">Groceries</p>
-        <p className="history-amount">${Math.abs(transaction.amount)}</p>
+        <p className="history-title">{transaction.text}</p>
+        <p className="history-amount">{sign}${Math.abs(transaction.amount)}</p>
     </>
   )
 }
+
+HistoryList.propTypes = {
+  transaction: PropTypes.shape({
+    amount: PropTypes.number.isRequired,
+    text: PropTypes.string, // Include if text is expected
+    // Add any other expected properties of the transaction here
+  }).isRequired,
+};

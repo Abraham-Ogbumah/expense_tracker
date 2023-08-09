@@ -1,17 +1,18 @@
 import { useState } from "react";
+import PropTypes from 'prop-types'
 
 
-const AddTransaction = ( {id, addTransaction} ) => {
+
+const AddTransaction = ({ addTransaction }) => {
 
   const [text, setText] = useState("");
   const [amount, setAmount ] = useState(0);
 
-  function handleClick(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     const newTransaction ={
-      id,
       text,
-      amount
+      amount: Number(amount)
     }
     addTransaction(newTransaction)
     setText("")
@@ -23,7 +24,7 @@ const AddTransaction = ( {id, addTransaction} ) => {
       <h3 className="sub-header">Add Transaction</h3>
       <hr></hr>
       <div className="form">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="text" className="label">Text</label>
           <input 
@@ -57,12 +58,16 @@ const AddTransaction = ( {id, addTransaction} ) => {
           type="submit"
           value="Add Transaction"
           className="submit"
-          onClick={handleClick}
+          // onClick={handleClick}
         />
       </form>
       </div>
     </>
   )
 }
+
+AddTransaction.propTypes = { // Define the prop types
+  addTransaction: PropTypes.func.isRequired,
+};
 
 export default AddTransaction;
