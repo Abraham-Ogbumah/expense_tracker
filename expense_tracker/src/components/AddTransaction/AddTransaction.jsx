@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PropTypes from 'prop-types'
+import { v4 as uuidv4 } from 'uuid'
 
 
 
@@ -11,6 +12,7 @@ const AddTransaction = ({ addTransaction }) => {
   function handleSubmit(e) {
     e.preventDefault();
     const newTransaction ={
+      id: uuidv4(),
       text,
       amount: Number(amount)
     }
@@ -68,6 +70,7 @@ const AddTransaction = ({ addTransaction }) => {
 
 AddTransaction.propTypes = { // Define the prop types
   addTransaction: PropTypes.func.isRequired,
+  id: PropTypes.number
 };
 
 export default AddTransaction;

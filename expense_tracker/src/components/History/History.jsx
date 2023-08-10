@@ -9,7 +9,7 @@ const History = ({ transactions }) => {
         <hr></hr>
       <div className="">
        {transactions.map(transaction => (
-        <HistoryList key={transaction.text} transaction={transaction} />
+        <HistoryList key={transaction.id} transaction={transaction} />
        ))}
       </div>
     </div> 
