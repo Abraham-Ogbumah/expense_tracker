@@ -13,7 +13,7 @@ export default function HistoryList({transaction}) {
 
 HistoryList.propTypes = {
   transaction: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.number,
     amount: PropTypes.number.isRequired,
     text: PropTypes.string,
   }).isRequired,
