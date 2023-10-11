@@ -7,7 +7,7 @@ const initialState = {
 const expenseTrackerReducer = (state = initialState, action) => {
     if (action.type === ADD_TRANSACTION)
         return {
-            ...state,
+            // ...state,
             transactions: [action.payload, ...state.transactions]
         }
     return state;

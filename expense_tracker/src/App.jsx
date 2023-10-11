@@ -1,7 +1,7 @@
 // import React from "react";
 import PropTypes from 'prop-types'
 import { connect } from "react-redux";
-import { addTransaction } from "./redux/actions";
+import { addTransaction as addTransactionAction} from "./redux/actions";
 
 import AddTransaction from './components/AddTransaction/AddTransaction'
 import History from './components/History/History'
@@ -9,7 +9,6 @@ import Balance from './components/Balance/Balance'
 import './App.css'
 
 function App({ transactions, addTransaction }) {
-  // const {transactions, addTransaction} = props
   return (
     <div className='main'>
       <Balance transactions={transactions} />
@@ -21,7 +20,7 @@ function App({ transactions, addTransaction }) {
   )
 }
 
-App.propTypes = { // Define the prop types
+App.propTypes = {
   transactions: PropTypes.array.isRequired,
   addTransaction: PropTypes.func.isRequired,
 };
@@ -31,7 +30,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  addTransaction,
+  addTransaction: addTransactionAction,
+
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

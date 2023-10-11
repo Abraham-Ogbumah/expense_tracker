@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 const Balance = ({ transactions = [] }) => {
     const income = transactions.filter(t => t.amount > 0).reduce((acc, t) => acc + t.amount, 0);
     const expense = transactions.filter(t => t.amount < 0).reduce((acc, t) => acc - t.amount, 0)
-    const total = income - expense;
+    const total = (income - expense).toLocaleString();
 
   return (
     <>

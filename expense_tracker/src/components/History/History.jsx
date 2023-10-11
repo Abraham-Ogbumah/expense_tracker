@@ -16,7 +16,7 @@ const History = ({ transactions }) => {
 History.propTypes = {
   transactions: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number,
+      id: PropTypes.string,
       amount: PropTypes.number.isRequired,
       text: PropTypes.string.isRequired,
     })
