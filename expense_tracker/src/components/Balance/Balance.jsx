@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 
 const Balance = ({ transactions = [] }) => {
 
+    // Helper function to calculate total income
     const calculateIncome = () => {
         return transactions
             .filter(t => t.amount > 0)
